@@ -1,5 +1,4 @@
 mport streamlit as st
-from snowflake.snowpark.context import get_active_session
 
 
 # Write directly to the app
@@ -12,7 +11,8 @@ from snowflake.snowpark.functions import col
 
 
 #import streamlit as st
-
+cnx=st.connection ("snowflake")
+session=cnx.session()
 
 name_on_order = st.text_input("Nmae on Smoothie:")
 st.write("The name on your Smoothie will be:", name_on_order)
