@@ -45,10 +45,7 @@ if ingredients_list:
    #st.text(ingredients_list)
    ingredients_string = ''
 
-#new section display smoothiefroot nutrition information
-import requests
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+
 
    for fruit_chosen in ingredients_list:
        ingredients_string+=fruit_chosen+' '
@@ -68,3 +65,8 @@ time_to_insert=st.button('Submit Order')
 if time_to_insert:
     session.sql(my_insert_stmt).collect()
     st.success('Your Smoothie is ordered!', icon="✅")
+
+#new section display smoothiefroot nutrition information
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
